@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>학점 코드입력</title>
+</head>
+<body>
+<form  method="post", action="chwon_code.php">
+    <table border="1" cellspacing="0"  cellpadding=5>
+        <tr align=center>
+			<td colspan="5">학점 코드입력</td>
+        </tr>
+        <tr align=center>
+            <td>이름</td>
+            <td>수학</td>
+            <td>물리</td>
+            <td>화학</td>
+        </tr>
+        <tr align=center>
+          <td><input type="text" name="name" size=5></td>
+          <td><input type="radio" name="math" value="95">A(95점)<br>
+            <input type="radio" name="math" value="85">B(85점)<br>
+            <input type="radio" name="math" value="75">C(75점)
+          </td>
+          <td><input type="radio" name="phys" value="95">A(95점)<br>
+            <input type="radio" name="phys" value="85">B(85점)<br>
+            <input type="radio" name="phys" value="75">C(75점)
+          </td>
+          <td><input type="radio" name="chem" value="95">A(95점)<br>
+            <input type="radio" name="chem" value="85">B(85점)<br>
+            <input type="radio" name="chem" value="75">C(75점)
+          </td>
+        </tr>
+		<tr align=center>
+		<td colspan=4><input type="submit" value="코드입력">
+    </table>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,106 @@
+C:\xampp\mysql\bin>mysql -uroot
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.24-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [(none)]> create database chwon_employee;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| chwon_employee     |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [(none)]> use chwon_employee;
+Database changed
+MariaDB [chwon_employee]> create table chwon_salary (
+    -> id int(10) PRIMARY KEY NOT NULL,
+    -> name char(8) NOT NULL,
+    -> salary int(11) NOT NULL,
+    -> part varchar(12),
+    -> addr varchar(20),
+    -> tel char(13)
+    -> );
+Query OK, 0 rows affected (0.026 sec)
+
+MariaDB [chwon_employee]> show tables;
++--------------------------+
+| Tables_in_chwon_employee |
++--------------------------+
+| chwon_salary             |
++--------------------------+
+1 row in set (0.001 sec)
+
+MariaDB [chwon_employee]> desc chwon_salary;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int(10)     | NO   | PRI | NULL    |       |
+| name   | char(8)     | NO   |     | NULL    |       |
+| salary | int(11)     | NO   |     | NULL    |       |
+| part   | varchar(12) | YES  |     | NULL    |       |
+| addr   | varchar(20) | YES  |     | NULL    |       |
+| tel    | char(13)    | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+6 rows in set (0.010 sec)
+MariaDB [chwon_employee]> rename table chwon_salary to chwon_payment;
+Query OK, 0 rows affected (0.053 sec)
+
+MariaDB [chwon_employee]> show tables;
++--------------------------+
+| Tables_in_chwon_employee |
++--------------------------+
+| chwon_payment            |
++--------------------------+
+1 row in set (0.001 sec)
+
+MariaDB [chwon_employee]> create table chwon_person (
+    -> name char(8) NOT NULL,
+    -> school varchar(12),
+    -> phone int(11) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.026 sec)
+
+MariaDB [chwon_employee]> show tables;
++--------------------------+
+| Tables_in_chwon_employee |
++--------------------------+
+| chwon_payment            |
+| chwon_person             |
++--------------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [chwon_employee]> drop table chwon_person;
+Query OK, 0 rows affected (0.003 sec)
+
+MariaDB [chwon_employee]> show tables;
++--------------------------+
+| Tables_in_chwon_employee |
++--------------------------+
+| chwon_payment            |
++--------------------------+
+1 row in set (0.001 sec)

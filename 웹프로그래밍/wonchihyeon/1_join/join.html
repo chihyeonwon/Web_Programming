@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>가입정보 입력</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+<h3>가입정보 입력
+<form method="get" action="chwon_join.php">
+    <p>이름 : <input type="text" size=10 name="name">&nbsp;&nbsp;&nbsp;&nbsp;
+학번 : <input type="text" size=10 name="number"><br>
+    <p>거주지 : 
+	<input type="radio" name="country" value="서울">서울
+	<input type="radio" name="country" value="원주">원주
+	<input type="radio" name="country" value="수원">수원
+    <p>연령대 : 
+	<select name=age>
+		<option>연령대 선택
+		<option value="10대">10~19
+		<option value="20대">20~29
+		<option value="30대">30~39
+		<option value="40대">40~50
+	</select><p>
+	<input type="submit" value="가입하기">
+</form>
+</body>
+
+</html>
